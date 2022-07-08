@@ -7,7 +7,7 @@ function forItem(){
 function generateItemCode() {
 
     $.ajax({
-        url:"http://localhost:8080/Spring_pos_System_war/api/v1/item",
+        url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/item",
         method:"GET",
         success(resp){
             try {
@@ -37,7 +37,7 @@ function saveItem(){
 
 
     $.ajax({
-        url: "http://localhost:8080/Spring_pos_System_war/api/v1/item",
+        url: "http://localhost:8080/spring_mvc_back_end_war/api/v1/item",
         method: "POST",
         data: data,
         success(res) {
@@ -61,7 +61,7 @@ function saveItem(){
 function loadAllItem(){
     $("#itemTable").empty();
     $.ajax({
-        url:"http://localhost:8080/Spring_pos_System_war/api/v1/item",
+        url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/item",
         method:"GET",
         success(resp) {
             console.log(resp.data);
@@ -96,7 +96,7 @@ $("#btn-item-feild-Clear").click(function (){
 
 $("#btn-item-delete").click(function (){
     $.ajax({
-        url:"http://localhost:8080/Spring_pos_System_war/api/v1/item?code="+ $("#txtItemCode").val(),
+        url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/item?code="+ $("#txtItemCode").val(),
         method:"DELETE",
 
         success(resp) {
@@ -123,7 +123,7 @@ $("#btn-item-update").click(function (){
 
 
     $.ajax({
-        url:"http://localhost:8080/Spring_pos_System_war/api/v1/item",
+        url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/item",
         method:"PUT",
         contentType:"application/json",
         data:JSON.stringify(itemOb),
@@ -143,7 +143,7 @@ $("#btn-item-search").click(function (){
     console.log("search")
     var code= $("#txtItemSearch").val();
     $.ajax({
-        url:"http://localhost:8080/Spring_pos_System_war/api/v1/item",
+        url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/item",
         method:"Get",
         success(resp){
             for (var i of resp.data) {
