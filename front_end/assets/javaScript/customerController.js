@@ -8,7 +8,7 @@ function forCustomer(){
 
 function generateCustomerID() {
     $.ajax({
-        url:"http://localhost:8080/Spring_pos_System_war/api/v1/customer",
+        url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/customer",
         method:"GET",
         success(resp){
 
@@ -39,7 +39,7 @@ function saveCustomer(){
 
 
     $.ajax({
-        url:"http://localhost:8080/Spring_pos_System_war/api/v1/customer",
+        url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/customer",
         method: "POST",
         data: data,
         success(res) {
@@ -60,7 +60,7 @@ function saveCustomer(){
 function loadAllCustomer(){
     $("#customerTable").empty();
     $.ajax({
-        url:"http://localhost:8080/Spring_pos_System_war/api/v1/customer",
+        url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/customer",
         method:"GET",
         success(resp) {
             console.log(resp);
@@ -95,7 +95,7 @@ $("#btn-customer-clear-feild").click(function (){
 
 $("#btn-delete-customer").click(function (){
     $.ajax({
-        url:"http://localhost:8080/Spring_pos_System_war/api/v1/customer?id="+ $("#txtCusID").val(),
+        url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/customer?id="+ $("#txtCusID").val(),
         method:"DELETE",
 
         success(resp) {
@@ -122,7 +122,7 @@ $("#btn-update-customer").click(function (){
 
 
     $.ajax({
-        url:"http://localhost:8080/Spring_pos_System_war/api/v1/customer",
+        url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/customerr",
         method:"PUT",
         contentType:"application/json",
         data:JSON.stringify(cusOb),
@@ -141,7 +141,7 @@ $("#btn-update-customer").click(function (){
 $("#btn-customer-search").click(function (){
    var custID= $("#txtCustomerSearch").val();
     $.ajax({
-        url:"http://localhost:8080/Spring_pos_System_war/api/v1/customer",
+        url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/customer",
         method:"Get",
         success(resp){
             for (var i of resp.data) {
