@@ -6,7 +6,7 @@ $("#cmbItemIDs").append(`<option>None</option>`);
 
 function generateOrderID() {
     $.ajax({
-        url:"http://localhost:8080/Spring_pos_System_war/api/v1/purchase_Order",
+        url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/purchase_Order",
         method:"GET",
         success(resp){
 
@@ -43,7 +43,7 @@ function loadCustIDs(){
     // var customer=getCustomers();
     var ids=document.getElementById("cmbCustIDs");
     $.ajax({
-    url:"http://localhost:8080/Spring_pos_System_war/api/v1/customer",
+    url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/customer",
         method:"GET",
         success(resp) {
              console.log(resp.data);
@@ -62,7 +62,7 @@ function loadCustIDs(){
 $("#cmbCustIDs").click(function () {
     let cus=$('#cmbCustIDs').val();
     $.ajax({
-        url:"http://localhost:8080/Spring_pos_System_war/api/v1/customer",
+        url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/customer",
         method:"Get",
         success(resp){
             for (var i of resp.data) {
@@ -91,7 +91,7 @@ function loadItemIds(){
 
     var ids=document.getElementById("cmbItemIDs");
     $.ajax({
-        url:"http://localhost:8080/Spring_pos_System_war/api/v1/item",
+        url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/item",
         method:"GET",
         success(resp) {
             console.log(resp.data);
@@ -108,7 +108,7 @@ $("#cmbItemIDs").click(function () {
     console.log("clicked")
     let item=$('#cmbItemIDs').val();
     $.ajax({
-        url:"http://localhost:8080/Spring_pos_System_war/api/v1/item",
+        url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/item",
         method:"Get",
         success(resp){
             for (var i of resp.data) {
@@ -305,7 +305,7 @@ function saveOrder() {
 
 
     $.ajax({
-        url: "http://localhost:8080/Spring_pos_System_war/api/v1/purchase_Order",
+        url: "http://localhost:8080/spring_mvc_back_end_war/api/v1/purchase_Order",
         method: "POST",
         contentType: "application/json",
         data: JSON.stringify(orderOb),
@@ -354,7 +354,7 @@ function forOrderANDOrderDetailsTable(){
 function loadAllOrder(){
     $("#orderTable").empty();
     $.ajax({
-        url:"http://localhost:8080/Spring_pos_System_war/api/v1/purchase_Order",
+        url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/purchase_Order",
         method:"GET",
         success(resp) {
             console.log(resp.data);
@@ -373,7 +373,7 @@ function loadAllOrder(){
 function loadAllOrderDetails(){
     $("#orderDetailsTable").empty();
     $.ajax({
-        url:"http://localhost:8080/Spring_pos_System_war/api/v1/purchase_Order/details",
+        url:"http://localhost:8080/spring_mvc_back_end_war/api/v1/purchase_Order/details",
         method:"GET",
         success(resp) {
             console.log(resp.data);
